@@ -1,0 +1,36 @@
+#include <stdio.h>
+#include <string.h>
+
+int pairs(char a)
+{
+	if(a == '{')
+	a = '}';
+	if(a =='[')
+	a = ']';
+	if(a == '(')
+	a == ')';
+	return a; 
+}
+
+int main()
+{
+	char a[101], ra[101];
+	int i, n, len, top;
+	scanf("%d", &n);
+	len = strlen(a);
+	if(len%2 == 0)
+	return 0;
+	for(i = 0; i<n; i++)
+	getchar(a[i]);
+	for(i = 0; i<len; i++)
+	pairs(a[i]);
+	ra[++top] = a[i];
+	for(i = (len-2)/2+1; i<n; i++)
+	{
+	if(ra[top] != a[i])
+	break;
+	top--;
+	}
+	printf("ture");
+	return 0;
+}
